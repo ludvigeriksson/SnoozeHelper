@@ -1,0 +1,9 @@
+Package: com.ludvigeriksson.snoozehelper
+Name: SnoozeHelper
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Tap anywhere on the screen to snooze
+Maintainer: Ludvig Eriksson
+Author: Ludvig Eriksson
+Section: Tweaks
