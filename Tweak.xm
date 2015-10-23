@@ -1,9 +1,12 @@
 static UIView *tapView; // The view that acts like the snooze button
 static BOOL showBorder = NO; // Used during development only
 
+@interface SBLockScreenFullscreenBulletinViewController : UIViewController
+@end
+
 %hook SBLockScreenFullscreenBulletinViewController
 
--(void)loadView {
+- (void)loadView {
 	%orig;
 
 	// Get the view containing the snooze button
@@ -30,6 +33,11 @@ static BOOL showBorder = NO; // Used during development only
 		tapView.layer.borderColor = [UIColor whiteColor].CGColor;
 		tapView.layer.borderWidth = 2.0;
 	}
+}
+
+- (void)viewDidLayoutSubviews {
+	%orig;
+	[self.view bringSubviewToFront:tapView];
 }
 
 %new
